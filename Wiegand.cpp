@@ -17,6 +17,17 @@ unsigned long WIEGAND::getCode()
 	return _code;
 }
 
+void WIEGAND::getCode(byte *code)
+{
+  // Parse each byte (LSB first)
+	code[0] = (byte)(_code & 0xFF);
+	code[1] = (byte)((_code & 0xFF00) >> 8);
+	code[2] = (byte)((_code & 0xFF0000) >> 16);
+	code[3] = 0;
+  
+  return;
+}
+
 int WIEGAND::getWiegandType()
 {
 	return _wiegandType;

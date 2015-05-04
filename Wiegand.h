@@ -18,6 +18,7 @@ public:
 	void begin();
 	bool available();
 	unsigned long getCode();
+	void getCode(byte *code);
 	int getWiegandType();
 	
 private:
